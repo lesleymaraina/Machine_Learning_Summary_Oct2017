@@ -1,0 +1,1639 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Machine Learning Summary</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+		
+			<div class="slides">
+				<!-- Intro slide -->
+				<section>
+					<h3>Machine Learning Summary</h3>
+					<br>
+					<h3 style="font-size: 30px !important">Lesley M. Chapman</h3>
+					<h3 style="font-size:25px !important">Sept - October 2017</h3>
+				
+				</section>
+
+
+				<section>
+					<h3>Aim</h3>
+					<br>
+						<ul>
+
+						<li style="font-size: 25px !important">Determine ’high confidence’ genotypes for 5000 randomly sampled deletions based on machine learning analysis and Svanalyzer integration method results</li>
+
+						</ul>
+				</section>
+
+	
+			<!-- Approach -->
+				<section>
+					<h3>Approach</h3>
+					<!-- <img src='/images/Standards_IMG_0.png' style="height: 500px;" alt='DEL TSNE'> -->
+				</section>
+				<section>
+					<h3>Approach</h3>
+					<img src='images/approach1.png' style="height: 500px;" alt='Approach1'>
+					<br>
+						<ul>
+						<li style="font-size: 18px !important" >NOTE: SVanalyzer Labels</li>
+						<li style="font-size: 15px !important">Exact Match: EM</li>
+						<li style="font-size: 15px !important">Homozygous Reference: HR</li>
+						<li style="font-size: 15px !important" >Inaccurate Call: IC</li>
+				
+						</ul>
+				</section>
+
+
+				<!--  -->
+				
+				<!-- GTcons -->
+
+				<section>
+					<h3>Consensus Genotype Analysis Summary</h3>
+				</section>
+				<!--  -->
+
+
+
+
+				<!--  -->
+
+				<!-- Confusion Matrices -->
+				<section>
+					<h5>Train/Test Split: Confusion Matricies</h5>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold">Consensus Genotype (GTcons)</td>
+
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/0d2d9f03a533bdd50b1eccd47b781d7e#traintest_confusion_matrix">
+
+						<div>
+
+						Illumina 300X
+
+						</div>
+
+						</a>
+
+						</td>
+      				
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/78975c8fe28f516ac2b6022700c6e593#traintest_confusion_matrix">
+
+						<div>
+
+						Illumina 250bp
+
+						</div>
+
+						</a>
+
+						</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/eaab71dcd5628335612d1ce456372d4e#traintest_confusion_matrix">
+
+						<div>
+
+						Illumina Mate Pair
+
+						</div>
+
+						</a>
+
+						</td>
+ 
+
+    				</tr>
+
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a05cfc7e06a8a7ad416a0460eac364cc#traintest_confusion_matrix">
+
+						<div>
+
+						PacBio
+
+						</div>
+
+						</a>
+
+						</td>
+
+
+    				</tr>
+
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/69c3cd005e6f1bb9e454524b1f5289af#traintest_confusion_matrix">
+
+						<div>
+
+						10X Genomics
+
+						</div>
+
+						</a>
+
+						</td>
+      		
+    				</tr>
+
+  				</table>
+				</section>
+
+			<!-- Confusion Matrices -->
+				<section>
+					<h5>Train/Test Split: Confusion Matricies</h5>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold"> Leave-one-Out GTcons</td>
+
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/197cefa28ed478d5c907bd3e070ec1ee#traintest_confusion_matrix">
+
+						<div>
+
+						Illumina 300X
+
+						</div>
+
+						</a>
+
+						</td>
+      				
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/82e05d7c44df8eab211f809401429944#traintest_confusion_matrix">
+
+						<div>
+
+						Illumina 250bp
+
+						</div>
+
+						</a>
+
+						</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/381df76715ecd64b113d0644e2ef618e#traintest_confusion_matrix">
+
+						<div>
+
+						Illumina Mate Pair
+
+						</div>
+
+						</a>
+
+						</td>
+ 
+
+    				</tr>
+
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a78c5b43e76e50f9f72901318d757710#traintest_confusion_matrix">
+
+						<div>
+
+						PacBio
+
+						</div>
+
+						</a>
+
+						</td>
+
+
+    				</tr>
+
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a3d3054ef06f3d5c0148d2d76b6ebffc#traintest_confusion_matrix">
+
+						<div>
+
+						10X Genomics
+
+						</div>
+
+						</a>
+
+						</td>
+      		
+    				</tr>
+
+  				</table>
+
+
+
+				</section>
+
+
+				<!--  -->
+
+
+				<!-- Precision Score Summary -->
+				<section>
+					<h5>Model Perfomance Summary</h5>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold">Technology</td>
+      					<td style="font-size: 25px !important; font-weight:bold">Train/Test Split: Precision Score</td>
+      					 <td style="font-size: 25px !important; font-weight:bold">Prediction Step: Precision Score</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+
+						Illumina 300X: GTcons
+
+				
+
+						</td>
+
+      					<td style="font-size: 18px !important">
+
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/0d2d9f03a533bdd50b1eccd47b781d7e#traintest_precision">
+
+						<div>
+
+      					0.961
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+
+      					<td style="font-size: 18px !important">
+
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/0d2d9f03a533bdd50b1eccd47b781d7e#predict_precision_score_matrix">
+
+						<div>
+
+      					0.897
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+
+						Illumina 300X: LOO GTcons
+
+				
+
+						</td>
+
+      					<td style="font-size: 18px !important">
+
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/197cefa28ed478d5c907bd3e070ec1ee#traintest_precision">
+
+						<div>
+
+      					0.956
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+
+      					<td style="font-size: 18px !important">
+
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/197cefa28ed478d5c907bd3e070ec1ee#predict_precision_score_matrix">
+
+						<div>
+
+      					0.902
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						Illumina 250bp: GTcons
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/78975c8fe28f516ac2b6022700c6e593#traintest_precision">
+
+						<div>
+
+
+      					0.929
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/78975c8fe28f516ac2b6022700c6e593#predict_precision_score_matrix">
+
+						<div>
+
+
+      					0.874
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						Illumina 250bp: LOO GTcons
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/82e05d7c44df8eab211f809401429944#traintest_precision">
+
+						<div>
+
+
+      					0.920
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/82e05d7c44df8eab211f809401429944#predict_precision_score_matrix">
+
+						<div>
+
+
+      					0.880
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						Illumina Mate Pair: GTcons
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/eaab71dcd5628335612d1ce456372d4e#traintest_precision">
+
+						<div>
+
+
+      					0.878
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/eaab71dcd5628335612d1ce456372d4e#predict_precision_score_matrix">
+
+						<div>
+
+
+      					0.756
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						Illumina Mate Pair: LOO GTcons
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/381df76715ecd64b113d0644e2ef618e#traintest_precision">
+
+						<div>
+
+
+      					0.867
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/381df76715ecd64b113d0644e2ef618e#traintest_precision#predict_precision_score_matrix">
+
+						<div>
+
+
+      					0.764
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						PacBio: GTcons
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a05cfc7e06a8a7ad416a0460eac364cc#traintest_precision">
+
+						<div>
+
+
+      					0.939
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a05cfc7e06a8a7ad416a0460eac364cc#predict_precision_score_matrix">
+
+						<div>
+
+
+      					0.919
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						PacBio: LOO GTcons
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a78c5b43e76e50f9f72901318d757710#traintest_precision">
+
+						<div>
+
+
+      					0.861
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a78c5b43e76e50f9f72901318d757710#predict_precision_score_matrix">
+
+						<div>
+
+
+      					0.860
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						10X Genomics: GTcons
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/69c3cd005e6f1bb9e454524b1f5289af#traintest_precision">
+
+						<div>
+
+
+      					0.844
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/69c3cd005e6f1bb9e454524b1f5289af#predict_precision_score_matrix">
+
+						<div>
+
+
+      					0.820
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						10X Genomics: LOO GTcons
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a3d3054ef06f3d5c0148d2d76b6ebffc#traintest_precision">
+
+						<div>
+
+
+      					0.855
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a3d3054ef06f3d5c0148d2d76b6ebffc#predict_precision_score_matrix">
+
+						<div>
+
+
+      					0.826
+
+      					</div>
+
+						</a>
+
+      					</td>
+
+    				</tr>
+
+  				</table>
+
+				</section>
+
+
+				<!--  -->
+
+				<!-- SVanalyzer -->
+
+				<section>
+					<h3>SVanalyzer Analysis Summary</h3>
+				</section>
+				<!--  -->
+
+
+
+
+				<!--  -->
+
+				<!-- Confusion Matrices -->
+				<section>
+					<h5>Train/Test Split: Confusion Matricies</h5>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold">SVanalyzer Label Comparison</td>
+
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/96220395d0de66b2d4b6c87a3c75064c#traintest_confusion_matrix">
+
+						<div>
+
+						Illumina 300X
+
+						</div>
+
+						</a>
+
+						</td>
+      				
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/e0258b084b696c081289dcd0a9ffd69f#traintest_confusion_matrix">
+
+						<div>
+
+						Illumina 250bp
+
+						</div>
+
+						</a>
+
+						</td>
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/09cbbbde83ed2a264beb22cc7ba0f438#traintest_confusion_matrix">
+
+						<div>
+
+						Illumina Mate Pair
+
+						</div>
+
+						</a>
+
+						</td>
+ 
+
+    				</tr>
+
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/964d3fa76977d89986859acd28aa1cc4#traintest_confusion_matrix">
+
+						<div>
+
+						PacBio
+
+						</div>
+
+						</a>
+
+						</td>
+
+
+    				</tr>
+
+    				<tr>
+						<td style="font-size: 25px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/aa2ba0f97d4093a6d749637f8cfa16e3#traintest_confusion_matrix">
+
+						<div>
+
+						10X Genomics
+
+						</div>
+
+						</a>
+
+						</td>
+      		
+    				</tr>
+
+  				</table>
+				</section>
+
+			
+
+				<!-- Precision Score Summary -->
+				<section>
+					<h5>SVanalyzer: Model Performance Summary</h5>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold">Technology</td>
+      					<td style="font-size: 20px !important; font-weight:bold">Train/Test Split: Precision Score</td>
+ 
+
+    				</tr>
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+
+						Illumina 300X
+
+				
+
+						</td>
+
+      					<td style="font-size: 18px !important">
+
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/96220395d0de66b2d4b6c87a3c75064c#traintest_precision">
+
+						<div>
+
+      					0.767
+
+      					</div>
+
+						</a>
+
+    				</tr>
+
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						Illumina 250bp
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/e0258b084b696c081289dcd0a9ffd69f#traintest_precision">
+
+						<div>
+
+
+      					0.783
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+   
+    				</tr>
+    		
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						Illumina Mate Pair
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/09cbbbde83ed2a264beb22cc7ba0f438#traintest_precision">
+
+						<div>
+
+
+      					0.731
+
+      					</div>
+
+						</a>
+
+      			
+    				</tr>
+    				
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						PacBio
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/964d3fa76977d89986859acd28aa1cc4#traintest_precision">
+
+						<div>
+
+
+      					0.732
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+    				</tr>
+    				
+    				<tr>
+						<td style="font-size: 18px !important">
+						
+						10X Genomics
+
+						
+						</td>
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/aa2ba0f97d4093a6d749637f8cfa16e3#traintest_precision">
+
+						<div>
+
+
+      					0.723
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+      					
+
+    				</tr>
+    				
+
+  				</table>
+
+				</section>
+
+
+				<!--  -->
+
+<!-- SVanalyzer Label vs GTcons -->
+				<section>
+					<h5>Confusion Matricies: SVanalyzer Label vs GTcons</h5>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold">Technology</td>
+      		
+ 
+
+    				</tr>
+    				<tr>
+
+
+      					<td style="font-size: 18px !important">
+
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/96220395d0de66b2d4b6c87a3c75064c#svan_gtcons">
+
+						<div>
+
+      					Illumina 300X
+
+      					</div>
+
+						</a>
+
+    				</tr>
+
+    				<tr>
+
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/e0258b084b696c081289dcd0a9ffd69f#svan_gtcons">
+
+						<div>
+
+
+      					Illumina 250bp
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+   
+    				</tr>
+    		
+    				<tr>
+
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/09cbbbde83ed2a264beb22cc7ba0f438#svan_gtcons">
+
+						<div>
+
+
+      						Illumina Mate Pair
+
+      					</div>
+
+						</a>
+
+      			
+    				</tr>
+    				
+    				<tr>
+
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/964d3fa76977d89986859acd28aa1cc4#svan_gtcons">
+
+						<div>
+
+
+      					PacBio
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+    				</tr>
+    				
+    				<tr>
+
+      					
+      					<td style="font-size: 18px !important">
+						<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/aa2ba0f97d4093a6d749637f8cfa16e3#svan_gtcons">
+
+						<div>
+
+
+      					10X Genomics
+
+      					</div>
+
+						</a>
+
+      					</td>
+      					
+      					
+
+    				</tr>
+    				
+
+  				</table>
+
+				</section>
+
+
+				<!--  -->
+
+
+
+<!-- High Confidence Data Points -->
+<!-- 				<section>
+					<h4>Identifying 'High Confidence' Data Points</h4>
+				</section>
+
+
+
+				<section>
+
+					<img src='images/strategy1.png' style="height: 500px;" alt='Approach1'>
+
+				</section>
+
+
+				<section>
+
+					<img src='images/strategy2.png' style="height: 500px;" alt='Approach1'>
+
+				</section> -->
+	<!--  -->
+
+
+
+				<!-- High Confidence Label 1  -->
+				<section>
+					<h5>Strategy 1: 'High Confidence' Label Description</h5>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold"></td>
+      					<td style="font-size: 25px !important; font-weight:bold">Label</td>
+      					      					<td style="font-size: 25px !important; font-weight:bold">No. of Tech </br> with same label</td>
+      					<td style="font-size: 25px !important; font-weight:bold">Predict Probability</td>
+
+
+    				</tr>
+    				<tr>
+
+    				<td style="font-size: 25px !important">SVanalyzer Label</td>
+					<td style="font-size: 25px !important">EM | HR</td>
+										<td style="font-size: 25px !important">5</td>
+					<td style="font-size: 25px !important">1.0 | 0.9</td>
+
+
+    				</tr>
+    				<tr>
+    				<td style="font-size: 25px !important">GTcons</td>
+					<td style="font-size: 25px !important">HomRef[0]   </br> HetVar[1] | </br> HomVar [2]</td>
+										<td style="font-size: 25px !important">5</td>
+					<td style="font-size: 25px !important">1.0 | 0.9</td>
+
+
+
+    				</tr>
+
+  				</table>
+				</section>
+
+				<!--  -->
+
+
+				<!-- Strategy 1: High Confidence Label GTcons  -->
+				<section>
+					<h5>Strategy 1: 'High Confidence' Labels - GTcons</h5>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold">Category</td>
+      					<td style="font-size: 25px !important; font-weight:bold">Count</td>
+
+
+    				</tr>
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Ref [0]</td>
+					<td style="font-size: 25px !important">13</td>
+
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Het Var [1]</td>
+					<td style="font-size: 25px !important">19</td>
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Var [2]</td>
+					<td style="font-size: 25px !important">33</td>
+
+    				</tr>
+
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Total</td>
+					<td style="font-size: 25px !important">65</td>
+
+    				</tr>
+
+
+  				</table>
+  				</br>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/85827b8507a97022b2da46bf325f001b#conf_mat_GTcons_0.9"> Confusion Matrix </a>
+  					
+
+  				</br>
+  				<a href="https://drive.google.com/open?id=0B_tmvWTujzZGT21MYURlbkRIbGs"> Data </a>
+
+				</section>
+
+				<!--  -->
+
+				<!-- Strategy 1: High Confidence Label GTcons  -->
+				<section>
+					<h5>Strategy 1: 'High Confidence' Labels - GTcons</h5>
+					<h6>[Label Pred_Prob 1-0.8]</h6>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold">Category</td>
+      					<td style="font-size: 25px !important; font-weight:bold">Count</td>
+
+
+    				</tr>
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Ref [0]</td>
+					<td style="font-size: 25px !important">50</td>
+
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Het Var [1]</td>
+					<td style="font-size: 25px !important">96</td>
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Var [2]</td>
+					<td style="font-size: 25px !important">126</td>
+
+    				</tr>
+
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Total</td>
+					<td style="font-size: 25px !important">272</td>
+
+    				</tr>
+
+
+  				</table>
+  				</br>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/85827b8507a97022b2da46bf325f001b#conf_mat_GTcons_0.8"> Confusion Matrix </a>
+
+  				</br>
+
+  					<a href="https://drive.google.com/open?id=0B_tmvWTujzZGd0ItUngwNExEZmM"> Data </a>
+				</section>
+
+				<!--  -->
+
+				<!-- Strategy 1: High Confidence Label GTcons  -->
+				<section>
+					<h5>Strategy 1: 'High Confidence' Labels - GTcons</h5>
+					<h6>[ML Model Predicts Same Label for all 5 tech]</h6>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold">Category</td>
+      					<td style="font-size: 25px !important; font-weight:bold">Count</td>
+
+
+    				</tr>
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Ref [0]</td>
+					<td style="font-size: 25px !important">279</td>
+
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Het Var [1]</td>
+					<td style="font-size: 25px !important">898</td>
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Var [2]</td>
+					<td style="font-size: 25px !important">332</td>
+
+    				</tr>
+
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Total</td>
+					<td style="font-size: 25px !important">1509</td>
+
+    				</tr>
+
+
+  				</table>
+  				</br>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/85827b8507a97022b2da46bf325f001b#conf_mat_GTcons_supp"> Confusion Matrix </a>
+  					
+</br>
+  				<a href="https://drive.google.com/open?id=0B_tmvWTujzZGREZKNlZFNWlmeVk"> Data </a>
+
+
+				</section>
+
+				<!--  -->
+
+				<!-- High Confidence Label 2  -->
+				<section>
+					<h5>Strategy 2: 'High Confidence' Label Description</h5>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold"></td>
+      					<td style="font-size: 25px !important; font-weight:bold">Label</td>
+      					      					<td style="font-size: 25px !important; font-weight:bold">No. of Tech </br> with same label</td>
+      					<td style="font-size: 25px !important; font-weight:bold">Predict Probability</td>
+
+
+    				</tr>
+    				<tr>
+
+    				<td style="font-size: 25px !important">SVanalyzer Label</td>
+					<td style="font-size: 25px !important">EM | HR</td>
+										<td style="font-size: 25px !important">5</td>
+					<td style="font-size: 25px !important">1.0 | 0.9</td>
+
+
+    				</tr>
+    				<tr>
+    				<td style="font-size: 25px !important">LOO GTcons</td>
+					<td style="font-size: 25px !important">HomRef[0]   </br> HetVar[1] | </br> HomVar [2]</td>
+										<td style="font-size: 25px !important">5</td>
+					<td style="font-size: 25px !important">1.0 | 0.9</td>
+
+
+
+    				</tr>
+
+  				</table>
+
+				</section>
+
+				<!--  -->
+
+
+
+				<!-- Strategy 2: High Confidence Label LOO GTcons  -->
+				<section>
+					<h5>Strategy 2: 'High Confidence' Labels - LOO GTcons</h5>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold">Category</td>
+      					<td style="font-size: 25px !important; font-weight:bold">Count</td>
+
+
+    				</tr>
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Ref [0]</td>
+					<td style="font-size: 25px !important">7</td>
+
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Het Var [1]</td>
+					<td style="font-size: 25px !important">12</td>
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Var [2]</td>
+					<td style="font-size: 25px !important">19</td>
+
+    				</tr>
+
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Total</td>
+					<td style="font-size: 25px !important">38</td>
+
+    				</tr>
+
+
+  				</table>
+
+  				</br>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/85827b8507a97022b2da46bf325f001b#conf_mat_LOO_0.9"> Confusion Matrix </a>
+  					
+  				  				
+  				  	</br>
+  					<a href="https://drive.google.com/open?id=0B_tmvWTujzZGT1RPbHVBM1F0dTA"> Data </a>
+
+
+				</section>
+
+				<!--  -->
+
+
+				<!-- Strategy 2: High Confidence Label GTcons  -->
+				<section>
+					<h5>Strategy 2: 'High Confidence' Labels - LOO GTcons</h5>
+					<h6>[Label Pred_Prob 1-0.8]</h6>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold">Category</td>
+      					<td style="font-size: 25px !important; font-weight:bold">Count</td>
+
+
+    				</tr>
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Ref [0]</td>
+					<td style="font-size: 25px !important">38</td>
+
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Het Var [1]</td>
+					<td style="font-size: 25px !important">77</td>
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Var [2]</td>
+					<td style="font-size: 25px !important">107</td>
+
+    				</tr>
+
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Total</td>
+					<td style="font-size: 25px !important">222</td>
+
+    				</tr>
+
+
+  				</table>
+
+  				  				  </br>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/85827b8507a97022b2da46bf325f001b#conf_mat_LOO_0.8"> Confusion Matrix </a>
+
+  				  	</br>
+  					<a href="https://drive.google.com/open?id=0B_tmvWTujzZGSzczbm0td3NZWnc"> Data </a>
+
+
+				</section>
+
+				<!--  -->
+
+				<!-- Strategy 2: High Confidence Label GTcons  -->
+				<section>
+					<h5>Strategy 2: 'High Confidence' Labels - LOO GTcons</h5>
+					<h6>[ML Model Predicts Same Label for all 5 tech]</h6>
+					<br>
+				<table class="reveal_table">
+					<tr>
+
+      					<td style="font-size: 25px !important; font-weight:bold">Category</td>
+      					<td style="font-size: 25px !important; font-weight:bold">Count</td>
+
+
+    				</tr>
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Ref [0]</td>
+					<td style="font-size: 25px !important">276</td>
+
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Het Var [1]</td>
+					<td style="font-size: 25px !important">843</td>
+
+    				</tr>
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Hom Var [2]</td>
+					<td style="font-size: 25px !important">322</td>
+
+    				</tr>
+
+
+    				<tr>
+
+    				<td style="font-size: 25px !important">Total</td>
+					<td style="font-size: 25px !important">1441</td>
+
+    				</tr>
+
+
+  				</table>
+  				  </br>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/85827b8507a97022b2da46bf325f001b#conf_mat_LOO_supp"> Confusion Matrix </a>
+
+  				</br>
+  					<a href="https://drive.google.com/open?id=0B_tmvWTujzZGSkVMSUdUZ3RUSjQ"> Data </a>
+
+
+
+				</section>
+
+				<!--  -->
+
+				<!-- Strategy 2: High Confidence Label GTcons  -->
+				<section>
+					<h5>Machine Learning Notebooks</h5>
+
+
+  				  </br>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/96220395d0de66b2d4b6c87a3c75064c"> 300X SVanalyzer</a>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/197cefa28ed478d5c907bd3e070ec1ee"> 300X LOO</a>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/197cefa28ed478d5c907bd3e070ec1ee"> 300X GTcons</a>
+
+  				</br>
+
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/e0258b084b696c081289dcd0a9ffd69f"> 250bp SVanalyzer</a>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/82e05d7c44df8eab211f809401429944"> 250bp LOO</a>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/78975c8fe28f516ac2b6022700c6e593"> 250bp GTcons</a>
+
+  				</br>
+
+  				<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/09cbbbde83ed2a264beb22cc7ba0f438"> MP SVanalyzer</a>
+  				<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/381df76715ecd64b113d0644e2ef618e"> MP LOO</a>
+  				<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/eaab71dcd5628335612d1ce456372d4e"> MP GTcons</a>
+
+  				</br>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/964d3fa76977d89986859acd28aa1cc4"> PB SVanalyzer</a>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a78c5b43e76e50f9f72901318d757710"> PB LOO</a>
+  					<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a05cfc7e06a8a7ad416a0460eac364cc"> PB GTcons</a>
+
+  				</br>
+
+  				<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/aa2ba0f97d4093a6d749637f8cfa16e3"> 10X SVanalyzer</a>
+  				<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/a3d3054ef06f3d5c0148d2d76b6ebffc"> 10X LOO</a>
+  				<a href="https://nbviewer.jupyter.org/gist/lesleymaraina/69c3cd005e6f1bb9e454524b1f5289af"> 10X GTcons</a>
+
+
+
+				</section>
+
+				<!--  -->
+
+
+
+
+
+
+
+
+
+
+
+
+			<!-- The End-->
+				<section>
+					<h4>END</h4>
+
+
+				</section>
+
+				
+				<!--  -->
+
+				
+
+
+
+			</div>
+
+			
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'none', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: '/Users/lmc2/Desktop/reveal/Test_edgePreload.js', async: true},
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+
+
+			
+
+		</script>
+
+		<section id="edgeanimation">
+					<p class="clientserver"></p>
+					<ul>
+						<li class="fragment">Client</li>
+						<li class="fragment" id="server">Server</li>
+					</ul>
+				</section>
+
+		<section id="edgeanimation">
+					<p style="height: 500px;" class="test"></p>
+					<ul>
+						<li class="fragment">Start</li>
+						<li class="fragment" id="server">Stop</li>
+					</ul>
+				</section>
+
+
+		<script>
+
+
+			Reveal.addEventListener('fragmentshown', function(event) {
+				if (event.fragment.id==='populate') {
+					document.querySelector("#myField").value="Don't forget"
+				}
+
+				if (event.fragment.id==='server') {
+					AdobeEdge.getComposition("clientserver").getStage().play("Start");
+				}
+
+			});
+
+			Reveal.addEventListener('slidechanged', function() {
+				if (event.currentSlide.id==='edgeanimation'){
+					AdobeEdge.getComposition("clientserver").getStage().play("End");
+				}
+			});
+		</script>
+
+	</body>
+</html>
